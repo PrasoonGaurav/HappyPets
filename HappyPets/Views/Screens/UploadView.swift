@@ -6,12 +6,21 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct UploadView: View {
+    
+    @State var showImagePicker:Bool = false
+    @State var imageSelected:UIImage = UIImage(named: "logo")!
+    @State var sourceType: UIImagePickerController.SourceType = .camera
+    @State var showPostImageView:Bool = false
+    
     var body: some View {
         ZStack {
             VStack{
                 Button(action: {
+                    sourceType = UIImagePickerController.SourceType.camera
+                    showImagePicker.toggle()
                     
                 }, label: {
                     Text("Take Photo".uppercased())
@@ -24,6 +33,8 @@ struct UploadView: View {
                 .background(Color.MyTheme.purpleColor)
                 
                 Button(action: {
+                    sourceType = UIImagePickerController.SourceType.photoLibrary
+                    showImagePicker.toggle()
                     
                 }, label: {
                     Text("Upload Photo".uppercased())
@@ -35,14 +46,28 @@ struct UploadView: View {
                 .frame(maxWidth: .infinity,maxHeight: .infinity, alignment: .center)
                 .background(Color.MyTheme.yellowColor)
             }
+
+            .sheet(isPresented: $showImagePicker, onDismiss: segueToPostImageView, content: {
+                ImagePicker(imageSelected: $imageSelected, sourceType: $sourceType)
+                    })
             
             Image("logo.transparent")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 100, height: 100, alignment: .center)
                 .shadow(radius: 12)
+                .fullScreenCover(isPresented: $showPostImageView, content: {
+                    PostImageView(imageSelected: $imageSelected)
+                })
         }
         .edgesIgnoringSafeArea(.top)
+    }
+    
+//    MARK:- Functions
+    func segueToPostImageView() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            showPostImageView.toggle()
+        }
     }
 }
 
