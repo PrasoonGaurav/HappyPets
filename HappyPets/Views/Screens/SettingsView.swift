@@ -34,8 +34,18 @@ struct SettingsView: View {
                 
                 GroupBox(label: SettingsLabelView(labelText: "Profile", labelImage: "person.fill"), content: {
                     
-                    SettingsRowView(leftIcon: "pencil", text: "Display Name", color: Color.MyTheme.purpleColor)
-                    SettingsRowView(leftIcon: "text.quote", text: "Bio", color: Color.MyTheme.purpleColor)
+                    NavigationLink(
+                        destination: SettingsEditTextView(submissionText: "Current Display Name", title: "Display Name", placeholder: "Your display name here...", description: "You can edit your display name here. This will be seen bhy other user on your profile and on your posts."),
+                        label: {
+                            SettingsRowView(leftIcon: "pencil", text: "Display Name", color: Color.MyTheme.purpleColor)
+                        })
+                    
+                    NavigationLink(
+                        destination: SettingsEditTextView(submissionText: "Current Bio Here", title: "Profile Bio", placeholder: "Your bio here...", description: "Your bio is a great place to let other users know a little about you. It will bw shown on your profile only."),
+                        label: {
+                            SettingsRowView(leftIcon: "text.quote", text: "Bio", color: Color.MyTheme.purpleColor)
+                        })
+                    
                     SettingsRowView(leftIcon: "photo", text: "Profile Picture", color: Color.MyTheme.purpleColor)
                     SettingsRowView(leftIcon: "figure.walk", text: "Sign Out", color: Color.MyTheme.purpleColor)
                     
@@ -56,7 +66,7 @@ struct SettingsView: View {
                 //MARK:- SECTION 4: SIGN OFF
                 
                 GroupBox {
-                    Text("HappyPets was made with love. \n All rights reserved \n Prasoon Gaurav \n copywright 2021.")
+                    Text("HappyPets was made with love.\n Copyright © 2021 Prasoon Gaurav \n All rights reserved.")
                         .foregroundColor(.gray)
                         .multilineTextAlignment(.center)
                         .frame(maxWidth: .infinity)
