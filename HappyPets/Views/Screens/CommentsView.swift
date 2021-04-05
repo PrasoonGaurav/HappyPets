@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CommentsView: View {
     
+    @Environment(\.colorScheme) var colorScheme
     @State var submissionText:String = ""
     @State var commentArray = [CommentModel]()
     
@@ -36,7 +37,7 @@ struct CommentsView: View {
                     
                 }, label: {
                     Image(systemName: "paperplane.fill")
-                        .accentColor(Color.MyTheme.purpleColor)
+                        .accentColor(colorScheme == .light ? Color.MyTheme.purpleColor : Color.MyTheme.yellowColor)
                         .font(.title2)
                 })
                 
@@ -79,5 +80,6 @@ struct CommentsView_Previews: PreviewProvider {
         NavigationView{
             CommentsView()
         }
+        .preferredColorScheme(.dark)
     }
 }
