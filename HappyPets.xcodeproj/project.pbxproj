@@ -37,6 +37,7 @@
 		3CCCC34D25D81F3C004951F6 /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCC34C25D81F3B004951F6 /* UploadView.swift */; };
 		3CCCC35025D82D41004951F6 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCC34F25D82D41004951F6 /* ImagePicker.swift */; };
 		3CE44B3C25CE726C00AE25FC /* ImageGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE44B3B25CE726C00AE25FC /* ImageGridView.swift */; };
+		3CF58C3A261B7AF500AA57CE /* LikeAnimationVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF58C39261B7AF500AA57CE /* LikeAnimationVIew.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		3CCCC34C25D81F3B004951F6 /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
 		3CCCC34F25D82D41004951F6 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		3CE44B3B25CE726C00AE25FC /* ImageGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridView.swift; sourceTree = "<group>"; };
+		3CF58C39261B7AF500AA57CE /* LikeAnimationVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeAnimationVIew.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				3C28A27E26013BDB00C2174B /* SettingsLabelView.swift */,
 				3C28A2812601402E00C2174B /* SettingsRowView.swift */,
 				3C86764F2609290500186A26 /* SignInWithAppleButtonCustom.swift */,
+				3CF58C39261B7AF500AA57CE /* LikeAnimationVIew.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				3C29A44925CB2B2C008E06BD /* ContentView.swift in Sources */,
 				3CB5A88025CDE08F009B7743 /* CarouselView.swift in Sources */,
 				3C05A0FC25CD8B79000EBDC0 /* MessageView.swift in Sources */,
+				3CF58C3A261B7AF500AA57CE /* LikeAnimationVIew.swift in Sources */,
 				3C4BA4B425CB3E5C0010F7A8 /* Extensions.swift in Sources */,
 				3CE44B3C25CE726C00AE25FC /* ImageGridView.swift in Sources */,
 				3C78EEC525CC952900009387 /* PostArrayObject.swift in Sources */,

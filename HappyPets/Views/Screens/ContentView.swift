@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var currentUserID:String? = nil
+    var currentUserID:String? = "hjh"
     
     var body: some View {
 
