@@ -10,7 +10,8 @@ import SwiftUI
 struct ContentView: View {
     
     @Environment(\.colorScheme) var colorScheme
-    var currentUserID:String? = "xxx"
+    
+    @AppStorage(CurrentUserDefault.userID) var currentUserID: String?
     
     var body: some View {
 
@@ -60,7 +61,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .preferredColorScheme(.dark)
+            .preferredColorScheme(.light)
     }
 }
 

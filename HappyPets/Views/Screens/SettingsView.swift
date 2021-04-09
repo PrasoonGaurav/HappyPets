@@ -11,6 +11,7 @@ struct SettingsView: View {
     
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.presentationMode) var presentationMode
+    @State var showSignOutError:Bool = false
     
     var body: some View {
         NavigationView{
@@ -53,8 +54,14 @@ struct SettingsView: View {
                             SettingsRowView(leftIcon: "photo", text: "Profile Picture", color: Color.MyTheme.purpleColor)
                         })
                     
-                   
-                    SettingsRowView(leftIcon: "figure.walk", text: "Sign Out", color: Color.MyTheme.purpleColor)
+                    Button(action: {
+                        signOut()
+                    }, label: {
+                        SettingsRowView(leftIcon: "figure.walk", text: "Sign Out", color: Color.MyTheme.purpleColor)
+                    })
+                    .alert(isPresented: $showSignOutError, content: {
+                        return Alert(title: Text("Error Signing out!"))
+                    })
                     
                 })
                 .padding()
@@ -81,7 +88,7 @@ struct SettingsView: View {
                     }, label: {
                         SettingsRowView(leftIcon: "globe", text: "HappyPets Website", color: Color.MyTheme.yellowColor)
                     })
-
+                    
                 })
                 .padding()
                 
@@ -112,7 +119,7 @@ struct SettingsView: View {
         .accentColor(colorScheme == .light ? Color.MyTheme.purpleColor : Color.MyTheme.yellowColor)
     }
     
-//   MARK:- Functions
+    //   MARK:- Functions
     
     func openCustomURL(urlString: String){
         guard let url = URL(string: urlString) else {return}
@@ -121,11 +128,26 @@ struct SettingsView: View {
             UIApplication.shared.open(url)
         }
     }
+    
+    func signOut(){
+        AuthService.instance.logOutUser { (success) in
+            if success{
+                print("Sucessfully logged out from HappyPets")
+                
+                //Dismiss the settings view
+                self.presentationMode.wrappedValue.dismiss()
+            }
+            else{
+                print("Error logging out!")
+                self.showSignOutError.toggle()
+            }
+        }
+    }
 }
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()
-            .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+            .preferredColorScheme(.dark)
     }
 }

@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		100F17E30AF33F853CE4A72B /* Pods_HappyPets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8500E88580D6DB7374C43F47 /* Pods_HappyPets.framework */; };
 		3C05A0FC25CD8B79000EBDC0 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C05A0FB25CD8B79000EBDC0 /* MessageView.swift */; };
 		3C05A0FF25CD8D13000EBDC0 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C05A0FE25CD8D13000EBDC0 /* CommentModel.swift */; };
 		3C18939025FF2706009EC922 /* PostImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C18938F25FF2706009EC922 /* PostImageView.swift */; };
@@ -22,6 +23,9 @@
 		3C4BA4B425CB3E5C0010F7A8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4BA4B325CB3E5C0010F7A8 /* Extensions.swift */; };
 		3C4BA4B925CB418E0010F7A8 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4BA4B825CB418E0010F7A8 /* FeedView.swift */; };
 		3C4BA4BC25CB477B0010F7A8 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4BA4BB25CB477B0010F7A8 /* PostView.swift */; };
+		3C6CBE27261C985600D17DEF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C6CBE26261C985600D17DEF /* GoogleService-Info.plist */; };
+		3C6CBE48261D043300D17DEF /* SignInWithGoogle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CBE47261D043300D17DEF /* SignInWithGoogle.swift */; };
+		3C6CBE4E261D1C2900D17DEF /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6CBE4D261D1C2900D17DEF /* AuthService.swift */; };
 		3C78EEC125CC78E900009387 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C78EEC025CC78E900009387 /* PostModel.swift */; };
 		3C78EEC525CC952900009387 /* PostArrayObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C78EEC425CC952900009387 /* PostArrayObject.swift */; };
 		3C78EEC825CC9C3C00009387 /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C78EEC725CC9C3C00009387 /* CommentsView.swift */; };
@@ -34,6 +38,8 @@
 		3C8F2D1B2602412800395A8A /* SettingsEditImageVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8F2D1A2602412800395A8A /* SettingsEditImageVIew.swift */; };
 		3CB5A87D25CDDF8A009B7743 /* BrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB5A87C25CDDF8A009B7743 /* BrowseView.swift */; };
 		3CB5A88025CDE08F009B7743 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB5A87F25CDE08F009B7743 /* CarouselView.swift */; };
+		3CBCC4DD261E33B0001270B2 /* Enums & Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBCC4DC261E33B0001270B2 /* Enums & Structs.swift */; };
+		3CBCC4E1261E39F6001270B2 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBCC4E0261E39F6001270B2 /* ImageManager.swift */; };
 		3CCCC34D25D81F3C004951F6 /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCC34C25D81F3B004951F6 /* UploadView.swift */; };
 		3CCCC35025D82D41004951F6 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCC34F25D82D41004951F6 /* ImagePicker.swift */; };
 		3CE44B3C25CE726C00AE25FC /* ImageGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE44B3B25CE726C00AE25FC /* ImageGridView.swift */; };
@@ -58,6 +64,9 @@
 		3C4BA4B325CB3E5C0010F7A8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3C4BA4B825CB418E0010F7A8 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		3C4BA4BB25CB477B0010F7A8 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		3C6CBE26261C985600D17DEF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3C6CBE47261D043300D17DEF /* SignInWithGoogle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithGoogle.swift; sourceTree = "<group>"; };
+		3C6CBE4D261D1C2900D17DEF /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		3C78EEC025CC78E900009387 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		3C78EEC425CC952900009387 /* PostArrayObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostArrayObject.swift; sourceTree = "<group>"; };
 		3C78EEC725CC9C3C00009387 /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
@@ -70,10 +79,15 @@
 		3C8F2D1A2602412800395A8A /* SettingsEditImageVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsEditImageVIew.swift; sourceTree = "<group>"; };
 		3CB5A87C25CDDF8A009B7743 /* BrowseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseView.swift; sourceTree = "<group>"; };
 		3CB5A87F25CDE08F009B7743 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
+		3CBCC4DC261E33B0001270B2 /* Enums & Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enums & Structs.swift"; sourceTree = "<group>"; };
+		3CBCC4E0261E39F6001270B2 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		3CCCC34C25D81F3B004951F6 /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
 		3CCCC34F25D82D41004951F6 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		3CE44B3B25CE726C00AE25FC /* ImageGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridView.swift; sourceTree = "<group>"; };
 		3CF58C39261B7AF500AA57CE /* LikeAnimationVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeAnimationVIew.swift; sourceTree = "<group>"; };
+		8089A0EDA2C2119414931889 /* Pods-HappyPets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappyPets.debug.xcconfig"; path = "Target Support Files/Pods-HappyPets/Pods-HappyPets.debug.xcconfig"; sourceTree = "<group>"; };
+		8500E88580D6DB7374C43F47 /* Pods_HappyPets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HappyPets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D5227655F10D05DBD8ABCF3 /* Pods-HappyPets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappyPets.release.xcconfig"; path = "Target Support Files/Pods-HappyPets/Pods-HappyPets.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,17 +95,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				100F17E30AF33F853CE4A72B /* Pods_HappyPets.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C65B3E391DC323344F777EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8500E88580D6DB7374C43F47 /* Pods_HappyPets.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3C29A43A25CB2B2C008E06BD = {
 			isa = PBXGroup;
 			children = (
 				3C29A44525CB2B2C008E06BD /* HappyPets */,
 				3C29A44425CB2B2C008E06BD /* Products */,
+				D883D3020911472A4340ECB4 /* Pods */,
+				0C65B3E391DC323344F777EE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,10 +131,13 @@
 		3C29A44525CB2B2C008E06BD /* HappyPets */ = {
 			isa = PBXGroup;
 			children = (
+				3CBCC4DF261E39CB001270B2 /* Utilities */,
+				3C6CBE45261D03E600D17DEF /* Services */,
 				3C78EEBF25CC78D900009387 /* Model */,
 				3C29A45B25CB397F008E06BD /* Views */,
 				3C4BA4B225CB3E440010F7A8 /* Helpers */,
 				3C29A44A25CB2B30008E06BD /* Assets.xcassets */,
+				3C6CBE26261C985600D17DEF /* GoogleService-Info.plist */,
 				3C29A44F25CB2B30008E06BD /* Info.plist */,
 				3C29A44C25CB2B30008E06BD /* Preview Content */,
 				3C29A45625CB3244008E06BD /* Launch Screen.storyboard */,
@@ -176,8 +204,34 @@
 			isa = PBXGroup;
 			children = (
 				3C4BA4B325CB3E5C0010F7A8 /* Extensions.swift */,
+				3CBCC4DC261E33B0001270B2 /* Enums & Structs.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		3C6CBE45261D03E600D17DEF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3C6CBE4C261D1C0F00D17DEF /* Firebase */,
+				3C6CBE46261D03FC00D17DEF /* SignInProviders */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		3C6CBE46261D03FC00D17DEF /* SignInProviders */ = {
+			isa = PBXGroup;
+			children = (
+				3C6CBE47261D043300D17DEF /* SignInWithGoogle.swift */,
+			);
+			name = SignInProviders;
+			sourceTree = "<group>";
+		};
+		3C6CBE4C261D1C0F00D17DEF /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				3C6CBE4D261D1C2900D17DEF /* AuthService.swift */,
+			);
+			name = Firebase;
 			sourceTree = "<group>";
 		};
 		3C78EEBF25CC78D900009387 /* Model */ = {
@@ -190,6 +244,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		3CBCC4DF261E39CB001270B2 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3CBCC4E0261E39F6001270B2 /* ImageManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		D883D3020911472A4340ECB4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8089A0EDA2C2119414931889 /* Pods-HappyPets.debug.xcconfig */,
+				8D5227655F10D05DBD8ABCF3 /* Pods-HappyPets.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -197,9 +268,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C29A45225CB2B30008E06BD /* Build configuration list for PBXNativeTarget "HappyPets" */;
 			buildPhases = (
+				3828C6D622D99D2949ED1BE2 /* [CP] Check Pods Manifest.lock */,
 				3C29A43F25CB2B2C008E06BD /* Sources */,
 				3C29A44025CB2B2C008E06BD /* Frameworks */,
 				3C29A44125CB2B2C008E06BD /* Resources */,
+				7132B31F028942FABA572E49 /* [CP] Embed Pods Frameworks */,
+				A26A2079BDA88FED7B282E35 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -248,12 +322,72 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C29A45725CB3244008E06BD /* Launch Screen.storyboard in Resources */,
+				3C6CBE27261C985600D17DEF /* GoogleService-Info.plist in Resources */,
 				3C29A44E25CB2B30008E06BD /* Preview Assets.xcassets in Resources */,
 				3C29A44B25CB2B30008E06BD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3828C6D622D99D2949ED1BE2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HappyPets-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7132B31F028942FABA572E49 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HappyPets/Pods-HappyPets-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HappyPets/Pods-HappyPets-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HappyPets/Pods-HappyPets-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A26A2079BDA88FED7B282E35 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HappyPets/Pods-HappyPets-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HappyPets/Pods-HappyPets-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HappyPets/Pods-HappyPets-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3C29A43F25CB2B2C008E06BD /* Sources */ = {
@@ -264,12 +398,14 @@
 				3C8676502609290500186A26 /* SignInWithAppleButtonCustom.swift in Sources */,
 				3C4BA4B925CB418E0010F7A8 /* FeedView.swift in Sources */,
 				3C78EEC125CC78E900009387 /* PostModel.swift in Sources */,
+				3C6CBE48261D043300D17DEF /* SignInWithGoogle.swift in Sources */,
 				3C28A27F26013BDB00C2174B /* SettingsLabelView.swift in Sources */,
 				3C86764A26091FD800186A26 /* SignUpView.swift in Sources */,
 				3C18939025FF2706009EC922 /* PostImageView.swift in Sources */,
 				3C29A44925CB2B2C008E06BD /* ContentView.swift in Sources */,
 				3CB5A88025CDE08F009B7743 /* CarouselView.swift in Sources */,
 				3C05A0FC25CD8B79000EBDC0 /* MessageView.swift in Sources */,
+				3CBCC4E1261E39F6001270B2 /* ImageManager.swift in Sources */,
 				3CF58C3A261B7AF500AA57CE /* LikeAnimationVIew.swift in Sources */,
 				3C4BA4B425CB3E5C0010F7A8 /* Extensions.swift in Sources */,
 				3CE44B3C25CE726C00AE25FC /* ImageGridView.swift in Sources */,
@@ -278,6 +414,7 @@
 				3C4BA4BC25CB477B0010F7A8 /* PostView.swift in Sources */,
 				3CB5A87D25CDDF8A009B7743 /* BrowseView.swift in Sources */,
 				3C05A0FF25CD8D13000EBDC0 /* CommentModel.swift in Sources */,
+				3CBCC4DD261E33B0001270B2 /* Enums & Structs.swift in Sources */,
 				3C88D59025FFC25000A1B1E5 /* ProfileHeaderView.swift in Sources */,
 				3CCCC34D25D81F3C004951F6 /* UploadView.swift in Sources */,
 				3C86764D2609263200186A26 /* OnboardingView.swift in Sources */,
@@ -286,6 +423,7 @@
 				3C29A44725CB2B2C008E06BD /* HappyPetsApp.swift in Sources */,
 				3C28A27C260133FB00C2174B /* SettingsView.swift in Sources */,
 				3C23819A2601D91A003FE301 /* SettingsEditTextView.swift in Sources */,
+				3C6CBE4E261D1C2900D17DEF /* AuthService.swift in Sources */,
 				3C867653260930D000186A26 /* OnboardingViewPart2.swift in Sources */,
 				3C28A2822601402E00C2174B /* SettingsRowView.swift in Sources */,
 			);
@@ -412,6 +550,7 @@
 		};
 		3C29A45325CB2B30008E06BD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8089A0EDA2C2119414931889 /* Pods-HappyPets.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -434,6 +573,7 @@
 		};
 		3C29A45425CB2B30008E06BD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D5227655F10D05DBD8ABCF3 /* Pods-HappyPets.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

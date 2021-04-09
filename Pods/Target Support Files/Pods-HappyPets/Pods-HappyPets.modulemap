@@ -1,0 +1,6 @@
+framework module Pods_HappyPets {
+  umbrella header "Pods-HappyPets-umbrella.h"
+
+  export *
+  module * { export * }
+}
