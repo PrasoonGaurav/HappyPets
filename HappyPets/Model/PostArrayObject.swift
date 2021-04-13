@@ -33,14 +33,26 @@ class PostArrayObject : ObservableObject{
     
     ///Used for getting posts for user profile
     init(userID: String) {
-         print("Get post for userID \(userID)")
+         print("Get posts for userID \(userID)")
         DataService.instance.downloadPostForUser(userID: userID) { (returnedPosts) in
             let sortedPost = returnedPosts.sorted { (post1, post2) -> Bool in
                 return post1.dateCreated > post2.dateCreated
             }
             self.dataArray.append(contentsOf: sortedPost)
         }
-        
+    }
+    
+    ///Used for Feed
+    init(shuffled:Bool) {
+        print("Get posts for Feed. Shuffled: \(shuffled)")
+        DataService.instance.downloadPostforFeed { (returnedPost) in
+            if shuffled {
+                let shuffledPost = returnedPost.shuffled()
+                self.dataArray.append(contentsOf: shuffledPost)
+            }else{
+                self.dataArray.append(contentsOf: returnedPost)
+            }
+        }
     }
     
 }

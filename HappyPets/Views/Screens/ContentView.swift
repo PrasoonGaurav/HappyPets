@@ -14,12 +14,15 @@ struct ContentView: View {
     @AppStorage(CurrentUserDefault.userID) var currentUserID: String?
     @AppStorage(CurrentUserDefault.displayName) var currentUserDisplayName: String?
     
+    let feedPosts = PostArrayObject(shuffled: false)
+    let browsePosts = PostArrayObject(shuffled: true)
+    
     var body: some View {
 
         TabView{
 
             NavigationView{
-                FeedView(posts: PostArrayObject(), title: "Feed")
+                FeedView(posts: feedPosts, title: "Feed")
             }
                 .tabItem {
                     Image(systemName: "book.fill")
@@ -27,7 +30,7 @@ struct ContentView: View {
                 }
             
             NavigationView{
-                BrowseView()
+                BrowseView(posts: browsePosts)
             }
                 .tabItem {
                     Image(systemName: "magnifyingglass")

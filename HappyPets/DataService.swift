@@ -69,6 +69,12 @@ class DataService{
         }
     }
     
+    func downloadPostforFeed(handler:@escaping (_ post:[PostModel]) -> ()){
+        REF_POSTS.order(by: DatabasePostField.dateCreated, descending: true).limit(to: 50).getDocuments {(querrySnapshot, error) in
+            handler(self.getPostsfromSnapshot(querrySnapshot: querrySnapshot))
+        }
+    }
+    
     private func getPostsfromSnapshot(querrySnapshot: QuerySnapshot?) -> [PostModel]{
         var postArray = [PostModel]()
         
