@@ -13,12 +13,14 @@ struct ProfileView: View {
     @State var profileDisplayName : String
     var profileUserId: String
     var isMyProfile: Bool
-    var posts = PostArrayObject()
+    var posts : PostArrayObject
     @State var showSettings: Bool = false
+    
+    @State var profileImage:UIImage = UIImage(named: "logo.loading")!
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false, content: {
-            ProfileHeaderView(profileDisplayName: $profileDisplayName)
+            ProfileHeaderView(profileDisplayName: $profileDisplayName, profileImage: $profileImage)
             Divider()
             ImageGridView(posts: posts)
         })
@@ -33,10 +35,22 @@ struct ProfileView: View {
                                 .accentColor(colorScheme == .light ? Color.MyTheme.purpleColor : Color.MyTheme.yellowColor)
                                 .opacity(isMyProfile ? 1.0 : 0.0)
         )
+        .onAppear(perform: {
+            getProfileImage()
+        })
         .sheet(isPresented: $showSettings, content: {
             SettingsView()
                 .preferredColorScheme(colorScheme)
         })
+    }
+    
+    //MARK:- FUNCTIONS
+    func getProfileImage(){
+        ImageManager.instance.downloadProfileImage(userID: profileUserId) { (returnedImage) in
+            if let image = returnedImage {
+                self.profileImage = image
+            }
+        }
     }
 }
 
@@ -44,7 +58,7 @@ struct ProfileView_Previews: PreviewProvider {
     
     static var previews: some View {
         NavigationView{
-            ProfileView(profileDisplayName: "Joe", profileUserId: "", isMyProfile: true)
+            ProfileView(profileDisplayName: "Joe", profileUserId: "", isMyProfile: true, posts: PostArrayObject(userID: ""))
                 .preferredColorScheme(.light)
 
         }

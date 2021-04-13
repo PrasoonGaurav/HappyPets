@@ -12,6 +12,7 @@
 		3C05A0FF25CD8D13000EBDC0 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C05A0FE25CD8D13000EBDC0 /* CommentModel.swift */; };
 		3C18939025FF2706009EC922 /* PostImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C18938F25FF2706009EC922 /* PostImageView.swift */; };
 		3C23819A2601D91A003FE301 /* SettingsEditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2381992601D91A003FE301 /* SettingsEditTextView.swift */; };
+		3C2815242624F6FF000CF5A8 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2815232624F6FF000CF5A8 /* DataService.swift */; };
 		3C28A27C260133FB00C2174B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C28A27B260133FB00C2174B /* SettingsView.swift */; };
 		3C28A27F26013BDB00C2174B /* SettingsLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C28A27E26013BDB00C2174B /* SettingsLabelView.swift */; };
 		3C28A2822601402E00C2174B /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C28A2812601402E00C2174B /* SettingsRowView.swift */; };
@@ -36,6 +37,7 @@
 		3C88D58D25FFBCBA00A1B1E5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C88D58C25FFBCBA00A1B1E5 /* ProfileView.swift */; };
 		3C88D59025FFC25000A1B1E5 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C88D58F25FFC25000A1B1E5 /* ProfileHeaderView.swift */; };
 		3C8F2D1B2602412800395A8A /* SettingsEditImageVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8F2D1A2602412800395A8A /* SettingsEditImageVIew.swift */; };
+		3CAB115B2620C95100BD4F22 /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAB115A2620C95100BD4F22 /* SignInWithApple.swift */; };
 		3CB5A87D25CDDF8A009B7743 /* BrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB5A87C25CDDF8A009B7743 /* BrowseView.swift */; };
 		3CB5A88025CDE08F009B7743 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB5A87F25CDE08F009B7743 /* CarouselView.swift */; };
 		3CBCC4DD261E33B0001270B2 /* Enums & Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBCC4DC261E33B0001270B2 /* Enums & Structs.swift */; };
@@ -51,6 +53,7 @@
 		3C05A0FE25CD8D13000EBDC0 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		3C18938F25FF2706009EC922 /* PostImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageView.swift; sourceTree = "<group>"; };
 		3C2381992601D91A003FE301 /* SettingsEditTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsEditTextView.swift; sourceTree = "<group>"; };
+		3C2815232624F6FF000CF5A8 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		3C28A27B260133FB00C2174B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		3C28A27E26013BDB00C2174B /* SettingsLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabelView.swift; sourceTree = "<group>"; };
 		3C28A2812601402E00C2174B /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
@@ -77,6 +80,8 @@
 		3C88D58C25FFBCBA00A1B1E5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		3C88D58F25FFC25000A1B1E5 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		3C8F2D1A2602412800395A8A /* SettingsEditImageVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsEditImageVIew.swift; sourceTree = "<group>"; };
+		3CAB11582620C6D500BD4F22 /* HappyPets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HappyPets.entitlements; sourceTree = "<group>"; };
+		3CAB115A2620C95100BD4F22 /* SignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithApple.swift; sourceTree = "<group>"; };
 		3CB5A87C25CDDF8A009B7743 /* BrowseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseView.swift; sourceTree = "<group>"; };
 		3CB5A87F25CDE08F009B7743 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
 		3CBCC4DC261E33B0001270B2 /* Enums & Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enums & Structs.swift"; sourceTree = "<group>"; };
@@ -131,6 +136,7 @@
 		3C29A44525CB2B2C008E06BD /* HappyPets */ = {
 			isa = PBXGroup;
 			children = (
+				3CAB11582620C6D500BD4F22 /* HappyPets.entitlements */,
 				3CBCC4DF261E39CB001270B2 /* Utilities */,
 				3C6CBE45261D03E600D17DEF /* Services */,
 				3C78EEBF25CC78D900009387 /* Model */,
@@ -222,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				3C6CBE47261D043300D17DEF /* SignInWithGoogle.swift */,
+				3CAB115A2620C95100BD4F22 /* SignInWithApple.swift */,
 			);
 			name = SignInProviders;
 			sourceTree = "<group>";
@@ -230,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				3C6CBE4D261D1C2900D17DEF /* AuthService.swift */,
+				3C2815232624F6FF000CF5A8 /* DataService.swift */,
 			);
 			name = Firebase;
 			sourceTree = "<group>";
@@ -395,6 +403,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C8F2D1B2602412800395A8A /* SettingsEditImageVIew.swift in Sources */,
+				3CAB115B2620C95100BD4F22 /* SignInWithApple.swift in Sources */,
 				3C8676502609290500186A26 /* SignInWithAppleButtonCustom.swift in Sources */,
 				3C4BA4B925CB418E0010F7A8 /* FeedView.swift in Sources */,
 				3C78EEC125CC78E900009387 /* PostModel.swift in Sources */,
@@ -426,6 +435,7 @@
 				3C6CBE4E261D1C2900D17DEF /* AuthService.swift in Sources */,
 				3C867653260930D000186A26 /* OnboardingViewPart2.swift in Sources */,
 				3C28A2822601402E00C2174B /* SettingsRowView.swift in Sources */,
+				3C2815242624F6FF000CF5A8 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,6 +564,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HappyPets/HappyPets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"HappyPets/Preview Content\"";
 				DEVELOPMENT_TEAM = GCV8WP2UBQ;
@@ -577,6 +588,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HappyPets/HappyPets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"HappyPets/Preview Content\"";
 				DEVELOPMENT_TEAM = GCV8WP2UBQ;

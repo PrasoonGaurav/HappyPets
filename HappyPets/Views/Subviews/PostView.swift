@@ -11,11 +11,12 @@ struct PostView: View {
     
     @State var post:PostModel
     var showHeaderAndFooter : Bool
-    @State var postImage: UIImage = UIImage(named: "dog1")!
     @State var animatelike: Bool = false
     @State var addHeartAnimationToView: Bool
     @State var showActionSheet: Bool = false
     @State var actionSheetType: PostActionSheetOption = .general
+    @State var profileImage: UIImage = UIImage(named: "logo.loading")!
+    @State var postImage:UIImage = UIImage(named: "logo.loading")!
     
     enum PostActionSheetOption{
         case general
@@ -30,10 +31,10 @@ struct PostView: View {
                 HStack {
                     
                     NavigationLink(
-                        destination: ProfileView(profileDisplayName: post.userName, profileUserId: post.userId, isMyProfile: false),
+                        destination: ProfileView(profileDisplayName: post.userName, profileUserId: post.userId, isMyProfile: false, posts: PostArrayObject(userID: post.userId)),
                         label: {
                             //User Profile image
-                            Image("dog1")
+                            Image(uiImage: profileImage)
                                 .resizable()
                                 .scaledToFill()
                                 .frame(width: 30, height: 30, alignment: .center)
@@ -129,12 +130,15 @@ struct PostView: View {
             }
 
         })
+        .onAppear(){
+            getImages()
+        }
     }
     
     //MARK:- FUNCTIONS
     func likePost(){
         //update the local data
-        let updatedPost = PostModel(postID: post.postID, userId: post.userId, userName: post.userName, captions: post.captions, date: post.date, likeCount: post.likeCount + 1, likedByUser: true)
+        let updatedPost = PostModel(postID: post.postID, userId: post.userId, userName: post.userName, captions: post.captions, dateCreated: post.dateCreated, likeCount: post.likeCount + 1, likedByUser: true)
         
         self.post = updatedPost
         
@@ -145,9 +149,25 @@ struct PostView: View {
     }
     
     func unlikePost(){
-        let updatedPost = PostModel(postID: post.postID, userId: post.userId, userName: post.userName, captions: post.captions, date: post.date, likeCount: post.likeCount - 1, likedByUser: false)
+        let updatedPost = PostModel(postID: post.postID, userId: post.userId, userName: post.userName, captions: post.captions, dateCreated: post.dateCreated, likeCount: post.likeCount - 1, likedByUser: false)
         
         self.post = updatedPost
+    }
+    
+    func getImages(){
+        //Get Profile Image
+        ImageManager.instance.downloadProfileImage(userID: post.userId) { (returnedProfileImage) in
+            if let image = returnedProfileImage{
+                self.profileImage = image
+            }
+        }
+        
+        //Get Profile Image
+        ImageManager.instance.downloadPostImage(postID: post.postID) { (returnedPostImage) in
+            if let image = returnedPostImage{
+                self.postImage = image
+            }
+        }
     }
     
     func getActionSheet() -> ActionSheet{
@@ -215,7 +235,7 @@ struct PostView: View {
 
 struct PostView_Previews: PreviewProvider {
     
-    static var post:PostModel = PostModel( postID: "", userId: "", userName: "Prasoon Gaurav", captions: "Test Caption 1", date: Date(), likeCount: 0, likedByUser: false)
+    static var post:PostModel = PostModel( postID: "", userId: "", userName: "Prasoon Gaurav", captions: "Test Caption 1", dateCreated: Date(), likeCount: 0, likedByUser: false)
     
     static var previews: some View {
         PostView(post: post, showHeaderAndFooter: true, addHeartAnimationToView: true)

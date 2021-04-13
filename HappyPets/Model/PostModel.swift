@@ -15,7 +15,7 @@ struct PostModel:Identifiable, Hashable {
     var userId: String     //ID of the user in the database
     var userName: String   //Username of user in the database
     var captions: String?
-    var date: Date
+    var dateCreated: Date
     var likeCount:Int
     var likedByUser:Bool
     

@@ -40,14 +40,16 @@ struct OnboardingView: View {
                 .foregroundColor(Color.MyTheme.purpleColor)
                 .padding()
             
+            //MARK:- SignIn With Apple
             Button(action: {
-                showOnboardingPart2.toggle()
+                SignInWithApple.instance.startSignInWithAppleFlow(view: self)
             }, label: {
                 SignInWithAppleButtonCustom()
                     .frame(height: 60)
                     .frame(maxWidth: .infinity)
             })
             
+            //MARK:- SignIn With Google
             Button(action: {
                 SignInWithGoogle.instance.startSignInwithGoolgeFlow(view: self)
             }, label: {

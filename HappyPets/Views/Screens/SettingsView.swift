@@ -72,13 +72,13 @@ struct SettingsView: View {
                 GroupBox(label: SettingsLabelView(labelText: "Application", labelImage: "apps.iphone"), content: {
                     
                     Button(action: {
-                        openCustomURL(urlString: "https://www.google.com")
+                        openCustomURL(urlString: "https://prasoongaurav.github.io/champAR-Privacy-Policy.github.io/")
                     }, label: {
                         SettingsRowView(leftIcon: "folder.fill", text: "Privacy Policy", color: Color.MyTheme.yellowColor)
                     })
                     
                     Button(action: {
-                        openCustomURL(urlString: "https://www.google.com")
+                        openCustomURL(urlString: "https://prasoongaurav.github.io/champAR-Privacy-Policy.github.io/Termsandcondition.html")
                     }, label: {
                         SettingsRowView(leftIcon: "folder.fill", text: "Terms & Conditions", color: Color.MyTheme.yellowColor)
                     })
