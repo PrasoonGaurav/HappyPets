@@ -18,6 +18,8 @@ struct PostView: View {
     @State var profileImage: UIImage = UIImage(named: "logo.loading")!
     @State var postImage:UIImage = UIImage(named: "logo.loading")!
     
+    @AppStorage(CurrentUserDefault.userID) var currentUserID: String?
+    
     enum PostActionSheetOption{
         case general
         case reporting
@@ -31,7 +33,9 @@ struct PostView: View {
                 HStack {
                     
                     NavigationLink(
-                        destination: ProfileView(profileDisplayName: post.userName, profileUserId: post.userId, isMyProfile: false, posts: PostArrayObject(userID: post.userId)),
+                        destination:LazyView(content: {
+                            ProfileView(profileDisplayName: post.userName, profileUserId: post.userId, isMyProfile: false, posts: PostArrayObject(userID: post.userId))
+                        }),
                         label: {
                             //User Profile image
                             Image(uiImage: profileImage)
@@ -70,6 +74,11 @@ struct PostView: View {
                 Image(uiImage: postImage)
                     .resizable()
                     .scaledToFit()
+                    .onTapGesture(count: 2) {
+                        if !post.likedByUser {
+                            likePost()
+                        }
+                    }
                 
                 if addHeartAnimationToView{
                     LikeAnimationVIew(animate: $animatelike)
@@ -137,21 +146,39 @@ struct PostView: View {
     
     //MARK:- FUNCTIONS
     func likePost(){
-        //update the local data
+        
+        guard  let userID = currentUserID else {
+            print("Cannot find user id while liking the post")
+            return
+        }
+        
+        //Update the local data
         let updatedPost = PostModel(postID: post.postID, userId: post.userId, userName: post.userName, captions: post.captions, dateCreated: post.dateCreated, likeCount: post.likeCount + 1, likedByUser: true)
         
         self.post = updatedPost
         
+        //Animate UI
         animatelike = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             animatelike = false
         }
+        
+        //Update the Database
+        DataService.instance.likePost(postID: post.postID, currentUserID: userID)
     }
     
     func unlikePost(){
+        guard  let userID = currentUserID else {
+            print("Cannot find user id while unsliking the post")
+            return
+        }
+        
         let updatedPost = PostModel(postID: post.postID, userId: post.userId, userName: post.userName, captions: post.captions, dateCreated: post.dateCreated, likeCount: post.likeCount - 1, likedByUser: false)
         
         self.post = updatedPost
+        
+        //Update the Database
+        DataService.instance.unlikePost(postID: post.postID, currentUserID: userID)
     }
     
     func getImages(){

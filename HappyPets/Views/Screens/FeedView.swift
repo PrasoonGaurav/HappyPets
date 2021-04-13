@@ -29,7 +29,7 @@ struct FeedView: View {
 struct FeedView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            FeedView(posts: PostArrayObject(), title: "Feed Test")
+            FeedView(posts: PostArrayObject(shuffled: false), title: "Feed Test")
         }
     }
 }

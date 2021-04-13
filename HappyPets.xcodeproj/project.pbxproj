@@ -21,6 +21,7 @@
 		3C29A44B25CB2B30008E06BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C29A44A25CB2B30008E06BD /* Assets.xcassets */; };
 		3C29A44E25CB2B30008E06BD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C29A44D25CB2B30008E06BD /* Preview Assets.xcassets */; };
 		3C29A45725CB3244008E06BD /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C29A45625CB3244008E06BD /* Launch Screen.storyboard */; };
+		3C2FC707262654CB00A12E11 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2FC706262654CB00A12E11 /* LazyView.swift */; };
 		3C4BA4B425CB3E5C0010F7A8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4BA4B325CB3E5C0010F7A8 /* Extensions.swift */; };
 		3C4BA4B925CB418E0010F7A8 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4BA4B825CB418E0010F7A8 /* FeedView.swift */; };
 		3C4BA4BC25CB477B0010F7A8 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4BA4BB25CB477B0010F7A8 /* PostView.swift */; };
@@ -64,6 +65,7 @@
 		3C29A44D25CB2B30008E06BD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3C29A44F25CB2B30008E06BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C29A45625CB3244008E06BD /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		3C2FC706262654CB00A12E11 /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
 		3C4BA4B325CB3E5C0010F7A8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3C4BA4B825CB418E0010F7A8 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		3C4BA4BB25CB477B0010F7A8 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			children = (
 				3C4BA4B325CB3E5C0010F7A8 /* Extensions.swift */,
 				3CBCC4DC261E33B0001270B2 /* Enums & Structs.swift */,
+				3C2FC706262654CB00A12E11 /* LazyView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				3CB5A88025CDE08F009B7743 /* CarouselView.swift in Sources */,
 				3C05A0FC25CD8B79000EBDC0 /* MessageView.swift in Sources */,
 				3CBCC4E1261E39F6001270B2 /* ImageManager.swift in Sources */,
+				3C2FC707262654CB00A12E11 /* LazyView.swift in Sources */,
 				3CF58C3A261B7AF500AA57CE /* LikeAnimationVIew.swift in Sources */,
 				3C4BA4B425CB3E5C0010F7A8 /* Extensions.swift in Sources */,
 				3CE44B3C25CE726C00AE25FC /* ImageGridView.swift in Sources */,
