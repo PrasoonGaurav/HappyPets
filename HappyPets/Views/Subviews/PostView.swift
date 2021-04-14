@@ -20,6 +20,11 @@ struct PostView: View {
     
     @AppStorage(CurrentUserDefault.userID) var currentUserID: String?
     
+    //ALERTS
+    @State var alertTitle: String = ""
+    @State var alertMessage: String = ""
+    @State var showAlert: Bool = false
+    
     enum PostActionSheetOption{
         case general
         case reporting
@@ -142,6 +147,9 @@ struct PostView: View {
         .onAppear(){
             getImages()
         }
+        .alert(isPresented: $showAlert) { () -> Alert in
+            return Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+        }
     }
     
     //MARK:- FUNCTIONS
@@ -198,7 +206,6 @@ struct PostView: View {
     }
     
     func getActionSheet() -> ActionSheet{
-        
         switch self.actionSheetType {
         case .general:
             return ActionSheet(title: Text("What would you like to do?"), message: nil, buttons: [
@@ -235,16 +242,26 @@ struct PostView: View {
                     self.actionSheetType = .general
                 })
             ])
-       
         }
     }
     
     func reportPost(reason: String){
         print("Report post now")
+        DataService.instance.uploadReport(reason: reason, postID: post.postID) { (success) in
+            if success{
+                self.alertTitle = "Reported!"
+                self.alertMessage = "Thanks for reporting. We will review it shortly and take appropriate action!"
+                self.showAlert.toggle()
+            }
+            else{
+                self.alertTitle = "Error"
+                self.alertMessage = "There was error uploading the report. Please restart the app and try again."
+                self.showAlert.toggle()
+            }
+        }
     }
     
     func sharePost(){
-        
         let message = "Check out this post from HappyPets!"
         let image = postImage
         let link = URL(string: "https://www.google.com")!
@@ -254,7 +271,6 @@ struct PostView: View {
         let viewController = UIApplication.shared.windows.first?.rootViewController
         viewController?.present(activityViewController, animated: true, completion: nil)
     }
-    
 }
 
 

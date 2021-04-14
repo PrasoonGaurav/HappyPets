@@ -29,6 +29,13 @@ struct DatabasePostField {
     static let likedBy = "liked_by" //array of userIDs who liked the post
 }
 
+//Fields within the report document in database
+struct DatabaseReportsField {
+    static let content = "content"
+    static let postID = "post_id"
+    static let dateCreated = "date_created"
+}
+
 //Fields for user defaults saved within the app
 struct CurrentUserDefault {
     static let displayName = "display_name"
