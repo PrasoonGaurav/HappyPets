@@ -12,10 +12,15 @@ struct CommentsView: View {
     @Environment(\.colorScheme) var colorScheme
     @State var submissionText:String = ""
     @State var commentArray = [CommentModel]()
+    @State var profileImage:UIImage = UIImage(named: "logo.loading")!
+    @AppStorage(CurrentUserDefault.userID) var currentUserId : String?
+    @AppStorage(CurrentUserDefault.displayName) var currentUserDisplayName : String?
+    var post : PostModel
     
     var body: some View {
         
         VStack{
+            //Message Scroll View
             ScrollView{
                 LazyVStack{
                     ForEach(commentArray, id: \.self) { comment in
@@ -24,8 +29,9 @@ struct CommentsView: View {
                 }
             }
             
+            //Bottom HStack
             HStack{
-                Image("dog1")
+                Image(uiImage: profileImage)
                     .resizable()
                     .scaledToFill()
                     .frame(width: 40, height: 40, alignment: .center)
@@ -34,14 +40,14 @@ struct CommentsView: View {
                 TextField("Comment here...", text: $submissionText)
                 
                 Button(action: {
-                    
+                    if textIsAppropriate(){
+                        addComment()
+                    }
                 }, label: {
                     Image(systemName: "paperplane.fill")
                         .accentColor(colorScheme == .light ? Color.MyTheme.purpleColor : Color.MyTheme.yellowColor)
                         .font(.title2)
                 })
-                
-
             }
             .padding(.all, 6)
         }
@@ -51,34 +57,89 @@ struct CommentsView: View {
         
         .onAppear(perform: {
             getComments()
+            getProfilePicture()
         })
-        
     }
     
     //Functions
+    
+    func getProfilePicture(){
+        guard let userID = currentUserId else {
+            print("Error geting userID for downloading comments")
+            return
+        }
+        
+        ImageManager.instance.downloadProfileImage(userID: userID) { (returnedProfileImage) in
+            if let image = returnedProfileImage {
+                self.profileImage = image
+            }
+        }
+    }
+    
     func getComments() {
-        
         print("Get comments from Database")
+        guard self.commentArray.isEmpty else{
+            return
+        }
         
-        let comment1 = CommentModel(commentId: "", userID: "", userName: "Dazzy", content: "This is the first comment", dateCreated: Date())
+        if let caption = post.captions, caption.count > 1{
+            let captionComment = CommentModel(commentId: "", userID: post.userId, userName: post.userName, content: caption, dateCreated: post.dateCreated)
+            self.commentArray.append(captionComment)
+        }
         
-        let comment2 = CommentModel(commentId: "", userID: "", userName: "Danniel", content: "This is the second comment", dateCreated: Date())
+        DataService.instance.downloadComments(postID: post.postID) { (returnedComments) in
+            self.commentArray.append(contentsOf: returnedComments)
+        }
+    }
+    
+    func textIsAppropriate() -> Bool {
+        // For example:-
+        // Check if the text has curses
+        // Check if the text is long enough
+        // Check if the text is blank
+        // Check if the text has inappropraite things
         
-        let comment3 = CommentModel(commentId: "", userID: "", userName: "Tommy", content: "This is the third comment", dateCreated: Date())
+        //Checkingfor bad words
+        let badWordsArray = ["Fuck", "Ass"]
+        let words = submissionText.components(separatedBy: " ")
+        for word in words{
+            if badWordsArray.contains(word){
+                return false
+            }
+        }
         
-        let comment4 = CommentModel(commentId: "", userID: "", userName: "Shyamu", content: "This is the fourth comment", dateCreated: Date())
+        //Checking for minimum character count
+        if submissionText.count < 3{
+            return false
+        }
+        return true
+    }
+    
+    func addComment(){
         
-        commentArray.append(comment1)
-        commentArray.append(comment2)
-        commentArray.append(comment3)
-        commentArray.append(comment4)
+        guard let displayName = currentUserDisplayName, let userID = currentUserId else{
+            return
+        }
+        
+        DataService.instance.uploadComment(postID: post.postID, content: submissionText , displayName: displayName, userID: userID) { (success, returnedCommentID) in
+            if success, let commentId = returnedCommentID{
+                let newComment = CommentModel(commentId: commentId, userID: userID, userName: displayName, content: submissionText, dateCreated: Date())
+                self.commentArray.append(newComment)
+                self.submissionText = ""
+                //Dismiss the keyboard
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            }
+        }
     }
 }
 
 struct CommentsView_Previews: PreviewProvider {
+    
+    static let post = PostModel(postID: "asdf", userId: "asdf", userName: "asdf", dateCreated: Date(), likeCount: 0, likedByUser: false)
+    
     static var previews: some View {
         NavigationView{
-            CommentsView()
+            CommentsView(post: post)
         }
         .preferredColorScheme(.dark)
     }

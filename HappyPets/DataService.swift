@@ -83,6 +83,31 @@ class DataService{
         }
     }
     
+    func uploadComment(postID: String, content: String, displayName: String, userID: String, handler: @escaping (_ success: Bool, _ commentID: String?) -> ()){
+        
+        let document = REF_POSTS.document(postID).collection(DatabasePostField.comments).document()
+        let commentID = document.documentID
+        
+        let data: [String:Any] = [
+            DatabaseCommentField.commentID : commentID,
+            DatabaseCommentField.userID : userID,
+            DatabaseCommentField.content : content,
+            DatabaseCommentField.displayName : displayName,
+            DatabaseCommentField.dateCreated : FieldValue.serverTimestamp()
+        ]
+        
+        document.setData(data) { (error) in
+            if let error = error{
+                print("Error uploading comment \(error)")
+                handler(false, nil)
+                return
+            }
+            else{
+                handler(true, commentID)
+                return
+            }
+        }
+    }
     
     //MARK:- GET FUNCTIONS
     func downloadPostForUser(userID: String, handler:@escaping (_ posts: [PostModel]) -> ()){
@@ -99,6 +124,7 @@ class DataService{
     }
     
     private func getPostsfromSnapshot(querrySnapshot: QuerySnapshot?) -> [PostModel]{
+        
         var postArray = [PostModel]()
         
         if let snapShot = querrySnapshot, snapShot.documents.count > 0{
@@ -112,8 +138,8 @@ class DataService{
                     let date = timeStamp.dateValue()
                     let postID = document.documentID
                     let likeCount = document.get(DatabasePostField.likesCount) as? Int ?? 0
-                    
                     var likedByUser: Bool = false
+                    
                     if let userIDArray = document.get(DatabasePostField.likedBy) as? [String], let userId = currentUserId {
                         likedByUser = userID.contains(userID)
                     }
@@ -128,6 +154,37 @@ class DataService{
         else{
             print("No documents in snapshot found for this user")
             return postArray
+        }
+    }
+    
+    func downloadComments(postID:String, handler: @escaping (_ comments: [CommentModel]) -> ()){
+        REF_POSTS.document(postID).collection(DatabasePostField.comments).order(by: DatabaseCommentField.dateCreated, descending: false).getDocuments { (querrySnapshot,  error) in
+            handler(self.getCommentFromSnapshot(querrySnapshot: querrySnapshot))
+        }
+    }
+    
+    private func getCommentFromSnapshot(querrySnapshot: QuerySnapshot?) -> [CommentModel]{
+        var commentArray = [CommentModel]()
+        if let snapshot = querrySnapshot, snapshot.documents.count > 0{
+            for document in snapshot.documents{
+                
+                if let userID = document.get(DatabaseCommentField.userID) as? String,
+                   let displayName = document.get(DatabaseCommentField.displayName) as? String,
+                   let content = document.get(DatabaseCommentField.content) as? String,
+                   let timeStamp = document.get(DatabaseCommentField.dateCreated) as? Timestamp{
+                    
+                    let commentId = document.documentID
+                    let date = timeStamp.dateValue()
+                    let newComment = CommentModel(commentId: commentId, userID: userID, userName: displayName, content: content, dateCreated: date)
+                    
+                    commentArray.append(newComment)
+                }
+            }
+            return commentArray
+        }
+        else{
+            print("No comments in document for this post")
+            return commentArray
         }
     }
     
@@ -157,8 +214,5 @@ class DataService{
         
         REF_POSTS.document(postID).updateData(data)
     }
-    
-    
-    
 }
 

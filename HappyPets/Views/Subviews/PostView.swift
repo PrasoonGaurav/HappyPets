@@ -114,7 +114,7 @@ struct PostView: View {
                     
                     //NavigationLink to comentsView when tapped on comment icon
                     NavigationLink(
-                        destination: CommentsView(),
+                        destination: CommentsView(post: post),
                         label: {
                             Image(systemName: "bubble.middle.bottom")
                                 .font(.title3)
