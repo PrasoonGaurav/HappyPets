@@ -67,7 +67,6 @@ struct OnboardingViewPart2: View {
         .alert(isPresented: $showError, content: {
             return Alert(title: Text("Error creating profile!"))
         })
-        
     }
     
     //    MARK:- Functions
@@ -101,7 +100,6 @@ struct OnboardingViewPart2: View {
             }
         }
     }
-    
 }
 
 struct OnboardingViewPart2_Previews: PreviewProvider {

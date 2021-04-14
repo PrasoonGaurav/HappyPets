@@ -20,7 +20,7 @@ struct ProfileView: View {
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false, content: {
-            ProfileHeaderView(profileDisplayName: $profileDisplayName, profileImage: $profileImage)
+            ProfileHeaderView(profileDisplayName: $profileDisplayName, profileImage: $profileImage, postArray: posts)
             Divider()
             ImageGridView(posts: posts)
         })
