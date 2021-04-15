@@ -31,6 +31,7 @@
 		3C78EEC125CC78E900009387 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C78EEC025CC78E900009387 /* PostModel.swift */; };
 		3C78EEC525CC952900009387 /* PostArrayObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C78EEC425CC952900009387 /* PostArrayObject.swift */; };
 		3C78EEC825CC9C3C00009387 /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C78EEC725CC9C3C00009387 /* CommentsView.swift */; };
+		3C842F7F2628C95300B01373 /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C842F7E2628C95300B01373 /* AnalyticsService.swift */; };
 		3C86764A26091FD800186A26 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C86764926091FD800186A26 /* SignUpView.swift */; };
 		3C86764D2609263200186A26 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C86764C2609263200186A26 /* OnboardingView.swift */; };
 		3C8676502609290500186A26 /* SignInWithAppleButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C86764F2609290500186A26 /* SignInWithAppleButtonCustom.swift */; };
@@ -75,6 +76,7 @@
 		3C78EEC025CC78E900009387 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		3C78EEC425CC952900009387 /* PostArrayObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostArrayObject.swift; sourceTree = "<group>"; };
 		3C78EEC725CC9C3C00009387 /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
+		3C842F7E2628C95300B01373 /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
 		3C86764926091FD800186A26 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		3C86764C2609263200186A26 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		3C86764F2609290500186A26 /* SignInWithAppleButtonCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleButtonCustom.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 			children = (
 				3C6CBE4D261D1C2900D17DEF /* AuthService.swift */,
 				3C2815232624F6FF000CF5A8 /* DataService.swift */,
+				3C842F7E2628C95300B01373 /* AnalyticsService.swift */,
 			);
 			name = Firebase;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 			files = (
 				3C8F2D1B2602412800395A8A /* SettingsEditImageVIew.swift in Sources */,
 				3CAB115B2620C95100BD4F22 /* SignInWithApple.swift in Sources */,
+				3C842F7F2628C95300B01373 /* AnalyticsService.swift in Sources */,
 				3C8676502609290500186A26 /* SignInWithAppleButtonCustom.swift in Sources */,
 				3C4BA4B925CB418E0010F7A8 /* FeedView.swift in Sources */,
 				3C78EEC125CC78E900009387 /* PostModel.swift in Sources */,

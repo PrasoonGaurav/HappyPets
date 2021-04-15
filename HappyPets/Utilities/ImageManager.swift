@@ -27,7 +27,9 @@ class ImageManager{
         let path = getProfileImagePath(userID: userID)
         
         //Save image to path
-        uploadImage(path: path, image: image) { (_) in }
+        DispatchQueue.global(qos: .userInteractive).async {
+            self.uploadImage(path: path, image: image) { (_) in }
+        }
     }
     
     func uploadPostImage(postID: String, image:UIImage, handler: @escaping(_ success: Bool) -> ()){
@@ -36,8 +38,12 @@ class ImageManager{
         let path = getPostImagePath(postID: postID)
         
         //Save image to path
-        uploadImage(path: path, image: image) { (sucess) in
-            handler(sucess)
+        DispatchQueue.global(qos: .userInteractive).async {
+            self.uploadImage(path: path, image: image) { (sucess) in
+                DispatchQueue.main.sync {
+                    handler(sucess)
+                }
+            }
         }
     }
     
@@ -47,8 +53,12 @@ class ImageManager{
         let path = getProfileImagePath(userID: userID)
         
         //Download the image from path
-        downloadImage(path: path) { (returnedImage) in
-            handler(returnedImage)
+        DispatchQueue.global(qos: .userInteractive).async {
+            self.downloadImage(path: path) { (returnedImage) in
+                DispatchQueue.main.async {
+                    handler(returnedImage)
+                }
+            }
         }
     }
     
@@ -57,10 +67,13 @@ class ImageManager{
         let path = getPostImagePath(postID: postID)
         
         //Download the image from the path
-        downloadImage(path: path) { (returnedImage) in
-            handler(returnedImage)
+        DispatchQueue.global(qos: .userInteractive).async {
+            self.downloadImage(path: path) { (returnedImage) in
+                DispatchQueue.main.async {
+                    handler(returnedImage)
+                }
+            }
         }
-        
     }
     
     // MARK:- Private Functions
