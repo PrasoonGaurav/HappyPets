@@ -69,16 +69,16 @@ struct OnboardingView: View {
             })
             .accentColor(Color.white)
             
-            Button(action: {
-                presentationMode.wrappedValue.dismiss()
-            }, label: {
-                Text("Continue as guest".uppercased())
-                    .font(.headline)
-                    .fontWeight(.medium)
-                    .padding()
-                
-            })
-            .accentColor(.black)
+//            Button(action: {
+//                presentationMode.wrappedValue.dismiss()
+//            }, label: {
+//                Text("Continue as guest".uppercased())
+//                    .font(.headline)
+//                    .fontWeight(.medium)
+//                    .padding()
+//
+//            })
+//            .accentColor(.black)
         }
         .padding(.all, 20)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
